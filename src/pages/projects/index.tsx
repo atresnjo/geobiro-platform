@@ -14,7 +14,7 @@ export default function Dashboard() {
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
               <BreadcrumbLink href="#">
-                Projects
+                Projects new
               </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
