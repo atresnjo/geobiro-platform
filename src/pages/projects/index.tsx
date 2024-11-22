@@ -1,8 +1,8 @@
-import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage } from "@/components/ui/breadcrumb";
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink } from "@/components/ui/breadcrumb";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
-import { DollarSign, Users, CreditCard, ClipboardList, Building2, UsersIcon, DatabaseIcon, SignalZeroIcon, HouseIcon } from "lucide-react";
+import { ClipboardList, Building2, UsersIcon, DatabaseIcon, HouseIcon } from "lucide-react";
 
 export default function Dashboard() {
   return (
