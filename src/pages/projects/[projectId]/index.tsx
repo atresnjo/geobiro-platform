@@ -17,8 +17,17 @@ import {
   Plus,
 } from "lucide-react";
 import { allProjects } from "@/lib/data";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { Button } from "@/components/ui/button";
+import React from "react";
+
+function MapUpdater({ lat, lng }: { lat: number; lng: number }) {
+  const map = useMap();
+  React.useEffect(() => {
+    map.setView([lat, lng], 13);
+  }, [lat, lng, map]);
+  return null;
+}
 
 export default function Project() {
   const params = useParams("/projects/:projectId");
@@ -53,11 +62,11 @@ export default function Project() {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
                   {selectedProject && (
-                    <Marker position={[selectedProject.lat, selectedProject.lng]}>
+                    <><Marker position={[selectedProject.lat, selectedProject.lng]}>
                       <Popup>
                         {selectedProject.name}
                       </Popup>
-                    </Marker>
+                    </Marker><MapUpdater lat={selectedProject.lat} lng={selectedProject.lng} /></>
                   )}
                 </MapContainer>
               </div>
