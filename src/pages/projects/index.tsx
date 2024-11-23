@@ -16,7 +16,6 @@ import {
   HouseIcon,
 } from "lucide-react";
 import { MapContainer, TileLayer, Marker } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
 import { useNavigate } from "@/router";
 import { type Project, allProjects } from "@/lib/data";
 

@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import { allProjects } from "@/lib/data";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
 import { Button } from "@/components/ui/button";
 
 export default function Project() {
