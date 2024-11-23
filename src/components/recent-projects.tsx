@@ -2,8 +2,16 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Clock, Folder } from "lucide-react";
 import type { Project } from "@/lib/data";
+import { useNavigate } from "@/router";
 
 const RecentProjects = ({ projects }: { projects: Project[] }) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = (project: Project) => {
+    navigate("/projects/:projectId", { params: { projectId: project.id } });
+  };
+
   return (
     <Card className="w-full mx-auto rounded-lg overflow-hidden">
       <CardHeader className="bg-gray-50 border-b border-gray-200">
@@ -15,6 +23,7 @@ const RecentProjects = ({ projects }: { projects: Project[] }) => {
         {projects.map((project, index) => (
           <div
             key={project.id}
+            onClick={() => handleClick(project)}
             className={`flex items-center justify-between p-4 ${index !== projects.length - 1 ? "border-b border-gray-200" : ""}`}
           >
             <div className="flex items-center space-x-4">

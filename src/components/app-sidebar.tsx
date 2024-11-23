@@ -93,7 +93,6 @@ const appData: AppData = {
       title: "Chat",
       url: "#",
       icon: InboxIcon,
-      badge: "10",
     },
     {
       title: "Users",

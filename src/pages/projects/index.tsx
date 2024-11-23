@@ -25,7 +25,6 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   const handlePinClick = (project: Project) => {
-    console.log(`Selected project: ${project.name}`);
     navigate("/projects/:projectId", { params: { projectId: project.id } });
   };
 

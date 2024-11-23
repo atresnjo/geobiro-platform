@@ -1,3 +1,12 @@
+import { useNavigate } from "@/router";
+import { useEffect } from "react";
+
 export default function Home() {
-  return <h1>Home</h1>
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/projects");
+  })
+  return <h1>Home</h1>;
 }
