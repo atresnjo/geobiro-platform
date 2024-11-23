@@ -3,11 +3,12 @@ import {
   BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbLink,
+  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { SidebarInset, SidebarTrigger } from "@/components/ui/sidebar";
-import { useParams } from "@/router";
+import { Link, useParams } from "@/router";
 import {
   ClipboardList,
   UsersIcon,
@@ -41,6 +42,12 @@ export default function Project() {
         <Separator orientation="vertical" className="mr-2 h-4" />
         <Breadcrumb>
           <BreadcrumbList>
+            <BreadcrumbItem className="hidden md:block">
+              <BreadcrumbLink>
+                <Link to={"/projects"}>Projects</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
             <BreadcrumbItem className="hidden md:block">
               <BreadcrumbLink href="#">{selectedProject?.id} - {selectedProject?.name}</BreadcrumbLink>
             </BreadcrumbItem>
