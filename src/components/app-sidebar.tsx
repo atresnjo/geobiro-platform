@@ -1,13 +1,14 @@
 "use client"
 
-import * as React from "react"
+import type * as React from "react"
 import {
   AudioWaveform,
   Command,
-  Frame,
   GalleryVerticalEnd,
+  InboxIcon,
+  type LucideIcon,
+  // biome-ignore lint/suspicious/noShadowRestrictedNames: <explanation>
   Map,
-  PieChart,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -23,9 +24,39 @@ import {
 } from "@/components/ui/sidebar"
 
 import { Building2, ClipboardList, Users, Shield, Settings, HelpCircle } from 'lucide-react';
+import { allProjects } from "@/lib/data"
+import type { Path } from "@/router"
+type Team = {
+  name: string;
+  logo: LucideIcon;
+  plan: string;
+};
+
+type NavItem = {
+  title: string;
+  url: string | Path;
+  icon: LucideIcon;
+  badge?: string;
+};
+
+type Project = {
+  name: string;
+  url: string;
+  icon: LucideIcon;
+};
+
+type AppData = {
+  user: {
+    name: string;
+    email: string;
+  };
+  teams: Team[];
+  navMain: NavItem[];
+  projects: Project[];
+};
 
 
-const data = {
+const appData: AppData = {
   user: {
     name: "Max Mustermann",
     email: "max.mustermann@deichmann.de",
@@ -55,8 +86,14 @@ const data = {
     },
     {
       title: "Projects",
-      url: "#",
+      url: "/projects" as Path,
       icon: ClipboardList,
+    },
+    {
+      title: "Chat",
+      url: "#",
+      icon: InboxIcon,
+      badge: "10",
     },
     {
       title: "Users",
@@ -79,39 +116,29 @@ const data = {
       icon: HelpCircle,
     },
   ],
-  projects: [
-    {
-      name: "Stora Frösunda 3",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Stora Frösunda 1",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Stora Frösunda 2",
-      url: "#",
-      icon: Map,
-    },
-  ],
-}
+  projects: allProjects.map((project) => ({
+    name: project.name,
+    url: `/projects/${project.id}`,
+    icon: Map,
+  })),
+};
 
 
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+
+
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher teams={appData.teams} />
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <NavMain items={appData.navMain} />
+        <NavProjects projects={appData.projects} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={appData.user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>

@@ -16,20 +16,24 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
 } from "@/components/ui/sidebar"
+import { Link } from "@/router"
+
+type NavItem = {
+  title: string;
+  url: unknown;
+  icon: LucideIcon;
+  badge?: string;
+  isActive?: boolean;
+  items?: {
+    title: string;
+    url: string;
+  }[];
+};
 
 export function NavMain({
   items,
 }: {
-  items: {
-    title: string
-    url: string
-    icon?: LucideIcon
-    isActive?: boolean
-    items?: {
-      title: string
-      url: string
-    }[]
-  }[]
+  items: NavItem[]
 }) {
   return (
     <SidebarGroup>
@@ -45,21 +49,32 @@ export function NavMain({
             <SidebarMenuItem>
               <SidebarMenuButton tooltip={item.title}>
                 {item.icon && <item.icon />}
-                <span>{item.title}</span>
+                {/* biome-ignore lint/suspicious/noExplicitAny: <explanation> */}
+                <Link to={item.url as any}>
+                  <span>{item.title}</span>
+                  {item.badge && (
+                    <span className="ml-auto text-xs font-medium text-muted-foreground">
+                      {item.badge}
+                    </span>
+                  )}
+                </Link>
               </SidebarMenuButton>
-              <CollapsibleContent>
-                <SidebarMenuSub>
-                  {item.items?.map((subItem) => (
-                    <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton asChild>
-                        <a href={subItem.url}>
-                          <span>{subItem.title}</span>
-                        </a>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  ))}
-                </SidebarMenuSub>
-              </CollapsibleContent>
+              {item.items && item.items.length > 0 && (
+                <CollapsibleContent>
+                  <SidebarMenuSub>
+                    {item.items.map((subItem) => (
+                      <SidebarMenuSubItem key={subItem.title}>
+                        <SidebarMenuSubButton asChild>
+                          {/* biome-ignore lint/suspicious/noExplicitAny: <explanation> */}
+                          <Link to={subItem.url as any}>
+                            <span>{subItem.title}</span>
+                          </Link>
+                        </SidebarMenuSubButton>
+                      </SidebarMenuSubItem>
+                    ))}
+                  </SidebarMenuSub>
+                </CollapsibleContent>
+              )}
             </SidebarMenuItem>
           </Collapsible>
         ))}
