@@ -7,6 +7,7 @@ export type Path =
   | `/`
   | `/projects`
   | `/projects/:projectId`
+  | `/viewer`
 
 export type Params = {
   '/projects/:projectId': { projectId: string }
