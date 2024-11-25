@@ -25,7 +25,7 @@ export const allProjects: Project[] = [
 				title: "3D BIM Models",
 				icon: Home,
 				items: [
-					{ title: "IFC Model", showDownload: true , showView: true},
+					{ title: "IFC Model", showDownload: true, showView: true },
 					{ title: "Revit Model", showDownload: true, showView: true },
 					{ title: "SketchUp Model", showDownload: true, showView: true },
 				],
@@ -71,16 +71,20 @@ export const allProjects: Project[] = [
 				icon: Home,
 				items: [
 					{ title: "IFC Model", showDownload: true, showView: true },
-					{ title: "Revit Model", showDownload: true , showView: true},
+					{ title: "Revit Model", showDownload: true, showView: true },
 				],
 			},
 			{
 				title: "Documents",
 				icon: FileText,
 				items: [
-					{ title: "PDF Floor plan", showDownload: true, showView: true},
+					{ title: "PDF Floor plan", showDownload: true, showView: true },
 					{ title: "PDF Pictures", showDownload: true, showView: true },
-					{ title: "Project Specifications", showDownload: true, showView: true },
+					{
+						title: "Project Specifications",
+						showDownload: true,
+						showView: true,
+					},
 				],
 			},
 			{
@@ -127,8 +131,16 @@ export const allProjects: Project[] = [
 				items: [
 					{ title: "PDF Floor plan", showDownload: true, showView: true },
 					{ title: "PDF Pictures", showDownload: true, showView: true },
-					{ title: "Green Building Certification", showDownload: true, showView: true },
-					{ title: "Energy Efficiency Report", showDownload: true, showView: true },
+					{
+						title: "Green Building Certification",
+						showDownload: true,
+						showView: true,
+					},
+					{
+						title: "Energy Efficiency Report",
+						showDownload: true,
+						showView: true,
+					},
 				],
 			},
 			{
@@ -231,8 +243,8 @@ export const allProjects: Project[] = [
 	{
 		id: "P006",
 		name: "Heiligenstadt",
-		lat: 51.377778,
-		lng: 10.136389,
+		lat: 48.2538,
+		lng: 16.3549,
 		lastUpdated: new Date("2023-03-15"),
 		cards: [
 			{

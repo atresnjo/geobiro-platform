@@ -97,7 +97,7 @@ export default function Dashboard() {
               <div className="h-[600px] rounded-lg overflow-hidden shadow-lg">
                 <MapContainer
                   // @ts-ignore
-                  center={[59.334591, 18.06324]}
+                  center={[allProjects[0].lat, allProjects[0].lng]}
                   zoom={5}
                   style={{ height: "100%", width: "100%" }}
                 >
