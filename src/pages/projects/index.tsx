@@ -98,7 +98,7 @@ export default function Dashboard() {
                 <MapContainer
                   // @ts-ignore
                   center={[allProjects[0].lat, allProjects[0].lng]}
-                  zoom={5}
+                  zoom={6.5}
                   style={{ height: "100%", width: "100%" }}
                 >
                   <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />

@@ -11,8 +11,8 @@ export const allProjects: Project[] = [
 	{
 		id: "P001",
 		name: "Riedstadt_MYS",
-		lat: 49.833333,
-		lng: 8.483333,
+		lat: 51.1236094,
+		lng: 8.0542568,
 		lastUpdated: new Date("2023-03-15"),
 		cards: [
 			{
@@ -56,8 +56,8 @@ export const allProjects: Project[] = [
 	{
 		id: "P002",
 		name: "Ansbach",
-		lat: 49.300833,
-		lng: 10.571667,
+		lat: 50.8217822,
+		lng: 7.375857,
 		lastUpdated: new Date("2023-03-15"),
 		cards: [
 			{
@@ -102,8 +102,8 @@ export const allProjects: Project[] = [
 	{
 		id: "P003",
 		name: "Rastatt, Schloss-Galerie",
-		lat: 48.858333,
-		lng: 8.208333,
+		lat: 52.3955476,
+		lng: 9.7225516,
 		lastUpdated: new Date("2023-03-15"),
 		cards: [
 			{
@@ -161,8 +161,8 @@ export const allProjects: Project[] = [
 	{
 		id: "P004",
 		name: "Marburg-Wehrda",
-		lat: 50.8225,
-		lng: 8.771111,
+		lat: 51.5504139,
+		lng: 8.1615559,
 		lastUpdated: new Date("2023-03-15"),
 		cards: [
 			{
@@ -202,8 +202,8 @@ export const allProjects: Project[] = [
 	{
 		id: "P005",
 		name: "Korbach",
-		lat: 51.273333,
-		lng: 8.872222,
+		lat: 51.8386644,
+		lng: 8.359923,
 		lastUpdated: new Date("2023-03-15"),
 		cards: [
 			{
@@ -243,8 +243,8 @@ export const allProjects: Project[] = [
 	{
 		id: "P006",
 		name: "Heiligenstadt",
-		lat: 48.2538,
-		lng: 16.3549,
+		lat: 51.379007,
+		lng: 10.1295884,
 		lastUpdated: new Date("2023-03-15"),
 		cards: [
 			{
